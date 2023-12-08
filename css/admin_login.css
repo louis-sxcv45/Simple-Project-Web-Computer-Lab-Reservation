@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #E4E9F7;
+}
+
+.container {
+    display: flex;
+    background-color: #ffff;
+    position: relative;
+    flex-direction: column;
+    height: 571px;
+    width: 470px;
+    align-items: center;
+    padding: 34px;
+    justify-content: center;
+    border-radius: 10%;
+}
+
+.container h1 {
+    position: relative;
+    font-size: 27px;
+    font-weight: bold;
+    color: black;
+    margin: 18px 0px;
+    text-align: center;
+}
+
+.container form {
+    margin-top: 30px;
+
+}
+
+.container form .txt_field {
+    height: 50px;
+    margin: 35px 0;
+    position: relative;
+    width: 100%;
+    
+}
+
+.txt_field {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.txt_field input {
+    height: 54px;
+    width: 400px;
+    padding: 12px;
+    border: 2px solid #F2F3F6;
+    background-color: #FAFAFC;
+    border-radius: 15px;
+    outline: none;
+    font-size: 16px;
+}
+
+.txt_field .icon {
+    display: flex;
+    position: absolute;
+    right: 18px;
+    top: 8px;
+    cursor: pointer;
+    color: #BFC2CB;
+}
+.txt_field label{
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 18px;
+    transition: top 0.3s, font-size 0.3s, color 0.3s;
+    color: #BFC2CB;
+}
+.txt_field label.password{
+    top: 11px;
+}
+form .txt_field input[type="password"] {
+    padding-right: 40px;
+}
+
+.button input {
+    background-color: #393B40;
+    color: #C5B087;
+    border: none;
+    padding: 12px;
+    margin: 5px 0px 0px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 19px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.button input:hover {
+    opacity: 0.9;
+}
+.txt_field input:focus,
+.txt_field input:valid {
+    border-color: #C5B087;
+    /* width: 403px; */
+}
+.txt_field :focus + label,
+.txt_field :valid + label{
+    color: #C5B087;
+    font-size: 12px;
+    margin-top: -6px;
+    top: 8px;
+    margin-left: -1px;
+    border-color: #C5B087;
+    /* width: 403px; */
+}
+
+.pass{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: end;
+    top: -5px;
+}
+
+#me{
+    color: #C5B087;
+    font-size: 15px;
+}
+.pass input[type = "checkbox"]{
+    margin-right: 5px;
+    align-items: center;
+}
+
+.having_problem{
+    display: flex;
+    position: relative;
+    top: -10px;
+}
+
+.having_problem a{
+    color: #C5B087;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.close{
+    display: none;
+}
+.active #closeUsername, .active_2 #closePassword{
+    display: flex;
+    position: absolute;
+    color: #F2F3F5;
+    background-color: #B9BCC6;
+    width: 14px;
+    height: 14px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    cursor: default;
+}
+
+.active_2 #closePassword{
+    top: 13px;
+}
+.right_close{
+    right: 23px;
+}
+
+.left_close{
+    right: 55px;
+}
+.close span{
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.close:hover{
+    opacity: 0.6;
+}
+
