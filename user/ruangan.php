@@ -64,13 +64,13 @@
                     <li class="nav-link">
                         <a href="barang.php">
                             <i class='material-symbols-outlined icon'>add_to_queue</i>
-                            <span class="text nav-text">Pinjam Alat</span>
+                            <span class="text nav-text">Daftar Barang</span>
                         </a>
                     </li>
                     <li class="nav-link">
                         <a href="data_pinjam_barang.php">
                             <i class='bx bx-briefcase-alt-2 icon'></i>
-                            <span class="text nav-text">Pinjam Alat</span>
+                            <span class="text nav-text">Pinjam Barang</span>
                         </a>
                     </li>
 

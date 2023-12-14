@@ -100,13 +100,13 @@ if (isset($_POST['submit'])) {
                     <li class="nav-link">
                         <a href="barang.php">
                             <i class='material-symbols-outlined icon'>add_to_queue</i>
-                            <span class="text nav-text">Pinjam Alat</span>
+                            <span class="text nav-text">Daftar Barang</span>
                         </a>
                     </li>
                     <li class="nav-link">
                         <a href="data_pinjam_barang.php">
                             <i class='bx bx-briefcase-alt-2 icon'></i>
-                            <span class="text nav-text">Pinjam Alat</span>
+                            <span class="text nav-text">Pinjam Barang</span>
                         </a>
                     </li>
 
@@ -143,6 +143,7 @@ if (isset($_POST['submit'])) {
                 $sql = "SELECT 
                 pr.id_peminjaman AS id_peminjaman,
                 u.username AS nama_peminjam,
+                r.penanggung_jawab AS nama_penanggung_jawab,
                 pr.nama_ruangan,
                 pr.tanggal_peminjaman,
                 pr.waktu_mulai,
@@ -170,6 +171,7 @@ if (isset($_POST['submit'])) {
                         <td>Tanggal Peminjaman</td>
                         <td>Waktu Mulai</td>
                         <td>Waktu Selesai</td>
+                        <td>Nama Penanggung Jawab</td>
                         <td>Status</td>
                         <td>Opsi</td>
                     </tr>
@@ -199,6 +201,9 @@ if (isset($_POST['submit'])) {
                                 </td>
                                 <td>
                                     <?php echo $ruang["waktu_selesai"]; ?>
+                                </td>
+                                <td>
+                                    <?php echo $barang["nama_penanggung_jawab"]; ?>
                                 </td>
                                 <td>
                                     <?php echo $ruang["status"]; ?>

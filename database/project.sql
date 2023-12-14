@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 08, 2023 at 07:40 PM
+-- Generation Time: Dec 14, 2023 at 03:13 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -49,15 +49,17 @@ CREATE TABLE `barang` (
   `id_barang` int NOT NULL,
   `nama_barang` varchar(40) DEFAULT NULL,
   `kode_barang` varchar(30) DEFAULT NULL,
-  `stok_barang` varchar(15) DEFAULT NULL
+  `stok_barang` varchar(15) DEFAULT NULL,
+  `penanggung_jawab` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `barang`
 --
 
-INSERT INTO `barang` (`id_barang`, `nama_barang`, `kode_barang`, `stok_barang`) VALUES
-(1, 'Proyektor', '001', '12');
+INSERT INTO `barang` (`id_barang`, `nama_barang`, `kode_barang`, `stok_barang`, `penanggung_jawab`) VALUES
+(1, 'Proyektor', '001', '9', 'Raye'),
+(2, 'Colokan Sambung', '002', '25', 'Raul');
 
 -- --------------------------------------------------------
 
@@ -82,7 +84,8 @@ CREATE TABLE `peminjaman_barang` (
 INSERT INTO `peminjaman_barang` (`id_peminjaman`, `id_user`, `id_barang`, `jumlah`, `tanggal_peminjaman`, `status`, `nama_barang`) VALUES
 (2, 1, 1, 2, '2023-12-10', 'Rejected', 'Proyektor'),
 (3, 2, 1, 2, '2023-12-21', 'Approved', 'Proyektor'),
-(4, 3, 1, 4, '2023-12-22', 'Approved', 'Proyektor');
+(4, 3, 1, 4, '2023-12-22', 'Approved', 'Proyektor'),
+(5, 1, 1, 3, '2023-12-22', 'Approved', 'Proyektor');
 
 -- --------------------------------------------------------
 
@@ -106,7 +109,6 @@ CREATE TABLE `peminjaman_ruangan` (
 --
 
 INSERT INTO `peminjaman_ruangan` (`id_peminjaman`, `id_ruangan`, `id_user`, `tanggal_peminjaman`, `waktu_mulai`, `waktu_selesai`, `status`, `nama_ruangan`) VALUES
-(1, 1, 1, '2023-12-06', '2023-12-12', '2023-12-13', 'Approved', 'Lab Komputer - 02'),
 (2, 6, 1, '2023-12-26', '2023-12-28', '2023-12-29', 'Rejected', 'Lab Komputer - 06'),
 (3, 1, 1, '2023-12-15', '2023-12-09', '2023-12-10', 'Rejected', 'Lab Komputer - 01'),
 (5, 4, 1, '2023-12-14', '2023-12-21', '2023-12-22', 'Approved', 'Lab Komputer - 04'),
@@ -123,20 +125,22 @@ CREATE TABLE `ruangan` (
   `nama_ruangan` varchar(40) DEFAULT NULL,
   `kode_ruangan` varchar(20) DEFAULT NULL,
   `id_ruangan` int NOT NULL,
-  `img` longblob
+  `img` longblob,
+  `penanggung_jawab` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `ruangan`
 --
 
-INSERT INTO `ruangan` (`nama_ruangan`, `kode_ruangan`, `id_ruangan`, `img`) VALUES
-('Lab Komputer - 01', '001', 1, 0x2e2e2f696d672f4c61622d312e6a7067),
-('Lab Komputer - 02', '002', 2, 0x2e2e2f696d672f7275616e67616e2d6b6f6d70757465722e6a7067),
-('Lab Komputer - 03', '003', 3, 0x2e2e2f696d672f6c61622d372e6a7067),
-('Lab Komputer - 04', '004', 4, 0x2e2e2f696d672f6c61622d352e6a7067),
-('Lab Komputer - 05', '005', 5, 0x2e2e2f696d672f7275616e67616e2d332e6a7067),
-('Lab Komputer - 06', '006', 6, 0x2e2e2f696d672f6c61622d362e6a7067);
+INSERT INTO `ruangan` (`nama_ruangan`, `kode_ruangan`, `id_ruangan`, `img`, `penanggung_jawab`) VALUES
+('Lab Komputer - 01', '001', 1, 0x2e2e2f696d672f4c61622d312e6a7067, 'Datir'),
+('Lab Komputer - 02', '002', 2, 0x2e2e2f696d672f7275616e67616e2d6b6f6d70757465722e6a7067, 'Reko'),
+('Lab Komputer - 03', '003', 3, 0x2e2e2f696d672f6c61622d372e6a7067, 'Melati'),
+('Lab Komputer - 04', '004', 4, 0x2e2e2f696d672f6c61622d352e6a7067, 'Vero'),
+('Lab Komputer - 05', '005', 5, 0x2e2e2f696d672f7275616e67616e2d332e6a7067, 'Leri'),
+('Lab Komputer - 06', '006', 6, 0x2e2e2f696d672f6c61622d362e6a7067, 'Paul'),
+('Lab Komputer - 07', '007', 29, 0x2e2e2f696d672f7275616e67616e2d342e6a7067, 'Tartu');
 
 -- --------------------------------------------------------
 
@@ -210,13 +214,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `barang`
 --
 ALTER TABLE `barang`
-  MODIFY `id_barang` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_barang` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `peminjaman_barang`
 --
 ALTER TABLE `peminjaman_barang`
-  MODIFY `id_peminjaman` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_peminjaman` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `peminjaman_ruangan`
@@ -228,7 +232,7 @@ ALTER TABLE `peminjaman_ruangan`
 -- AUTO_INCREMENT for table `ruangan`
 --
 ALTER TABLE `ruangan`
-  MODIFY `id_ruangan` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id_ruangan` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `users`

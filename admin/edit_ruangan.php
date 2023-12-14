@@ -6,6 +6,7 @@ session_start();
             $idroom = $_POST['id_ruangan'];
             $nameroom = $_POST['nama_ruangan'];
             $coderoom = $_POST['kode_ruangan'];
+            $pjr = $_POST['penanggung_jawab'];
 
             $targetdir = "../img/";
             $img = $targetdir . basename($_FILES["img"]["name"]);
@@ -13,7 +14,8 @@ session_start();
 
             mysqli_query($conn, "UPDATE ruangan SET 
                     nama_ruangan = '$nameroom', 
-                    kode_ruangan = '$coderoom', 
+                    kode_ruangan = '$coderoom',
+                    penanggung_jawab = '$pjr',
                     img = '$img' WHERE id_ruangan = '$idroom'");
             
             header("location: data_ruangan.php");
@@ -126,6 +128,7 @@ session_start();
                         <td>No.</td>
                         <td>Nama Ruangan</td>
                         <td>Kode Ruangan</td>
+                        <td>Nama Penanggung Jawab</td>
                         <td>Image</td>
                         <td>Opsi</td>
                     </tr>
@@ -147,6 +150,9 @@ session_start();
                             </td>
                             <td>
                                 <?php echo $room["kode_ruangan"]; ?>
+                            </td>
+                            <td>
+                                <?php echo $room["penanggung_jawab"]; ?>
                             </td>
                             <td></td>
                             <td>
@@ -185,6 +191,10 @@ session_start();
                     <div class="input-box">
                         <label>ID Room</label>
                         <input type="text" name="kode_ruangan" value="<?php echo $room['kode_ruangan'] ?>" placeholder="ID Room" required />
+                    </div>
+                    <div class="input-box">
+                        <label>Responsible Person</label>
+                        <input type="text" name="penanggung_jawab" value="<?php echo $room['penanggung_jawab'] ?>" placeholder="Responsible Person" required />
                     </div>
                     <div class="column">
                         <div class="input-box">

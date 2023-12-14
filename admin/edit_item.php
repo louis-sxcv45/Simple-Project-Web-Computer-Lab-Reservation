@@ -9,8 +9,10 @@ if(isset($_POST['save'])){
     $iditem = $_POST['id_barang'];
     $nameitem = $_POST['nama_barang'];
     $codeitem = $_POST['kode_barang'];
+    $pjb = $_POST['penanggung_jawab'];
     $amount = $_POST['stok_barang'];
-    mysqli_query($conn, "UPDATE barang SET nama_barang = '$nameitem', kode_barang = '$codeitem', stok_barang = '$amount'");
+    mysqli_query($conn, "UPDATE barang SET nama_barang = '$nameitem', kode_barang = '$codeitem', penanggung_jawab = '$pjb' ,
+        stok_barang = '$amount' WHERE id_barang = '$iditem'");
     header('location:data_barang.php');
     exit();
 }
@@ -129,6 +131,7 @@ if(isset($_POST['save'])){
                         <td>No.</td>
                         <td>Nama Barang</td>
                         <td>Kode Barang</td>
+                        <td>Nama Penanggung Jawab</td>
                         <td>Stok</td>
                         <td>Opsi</td>
                     </tr>
@@ -139,28 +142,31 @@ if(isset($_POST['save'])){
                     include("../database/connect.php");
                     $data = mysqli_query($conn, "select * from barang");
                     $nomor = 1;
-                    while ($room = mysqli_fetch_array($data)) {
+                    while ($item = mysqli_fetch_array($data)) {
                     ?>
                         <tr>
                             <td>
                                 <?php echo $nomor++; ?>
                             </td>
                             <td>
-                                <?php echo $room["nama_barang"]; ?>
+                                <?php echo $item["nama_barang"]; ?>
                             </td>
                             <td>
-                                <?php echo $room["kode_barang"]; ?>
+                                <?php echo $item["kode_barang"]; ?>
                             </td>
                             <td>
-                                <?php echo $room["stok_barang"]; ?>
+                                <?php echo $item["penanggung_jawab"]; ?>
+                            </td>
+                            <td>
+                                <?php echo $item["stok_barang"]; ?>
                             </td>
                             <td>
                                 <div class="opsi">
-                                    <a href="edit_item.php?id_barang=<?php echo $room['id_barang']; ?>" class="button edit" onclick="showForm()">
+                                    <a href="edit_item.php?id_barang=<?php echo $item['id_barang']; ?>" class="button edit" onclick="showForm()">
                                         <span class="material-symbols-outlined">edit</span>
                                         <div class="text-edit">Edit</div>
                                     </a>
-                                    <a href="delete.php?id_barang=<?php echo $room['id_barang']; ?>" class="button delete">
+                                    <a href="delete.php?id_barang=<?php echo $item['id_barang']; ?>" class="button delete">
                                         <span class="material-symbols-outlined">delete</span>
                                         <div class="text-edit">Delete</div>
                                     </a>
@@ -192,10 +198,14 @@ if(isset($_POST['save'])){
                         <label>ID Item</label>
                         <input type="text" name="kode_barang" value="<?php echo $item['kode_barang'] ?>" placeholder="ID Room" required />
                     </div>
+                    <div class="input-box">
+                        <label>Responsible Person</label>
+                        <input type="text" name="penanggung_jawab" value="<?php echo $item['penanggung_jawab'] ?>" placeholder="Responsible Person" required />
+                    </div>
                     <div class="column">
                         <div class="input-box">
                             <label>Stok</label>
-                            <input type="text" name="stok_barang" id="stok_barang" value="<?php echo $item['stok_barang'] ?>" required />
+                            <input type="text" name="stok_barang" id="stok" value="<?php echo $item['stok_barang'] ?>" required />
                         </div>
                     </div>
                     <button name="save">Save</button>

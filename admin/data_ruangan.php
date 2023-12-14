@@ -118,6 +118,7 @@ include("../database/connect.php");
                         <td>No.</td>
                         <td>Nama Ruangan</td>
                         <td>Kode Ruangan</td>
+                        <td>Nama Penanggung Jawab</td>
                         <td>Image</td>
                         <td>Opsi</td>
                     </tr>
@@ -139,6 +140,9 @@ include("../database/connect.php");
                             </td>
                             <td>
                                 <?php echo $room["kode_ruangan"]; ?>
+                            </td>
+                            <td>
+                                <?php echo $room["penanggung_jawab"]; ?>
                             </td>
                             <td>
                                 <img src="../img/<?php echo $room['img']; ?>" alt="img">
@@ -174,6 +178,10 @@ include("../database/connect.php");
                     <label>ID Room</label>
                     <input type="text" name="kode_ruangan" placeholder="ID Room" required />
                 </div>
+                <div class="input-box">
+                        <label>Responsible Person</label>
+                        <input type="text" name="penanggung_jawab" placeholder="Responsible Person" required />
+                    </div>
                 <div class="column">
                     <div class="input-box">
                         <label>Image</label>

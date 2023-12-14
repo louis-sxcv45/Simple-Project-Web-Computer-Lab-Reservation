@@ -137,6 +137,7 @@ if (isset($_GET['id_peminjaman'])) {
                         <td>Nama Barang</td>
                         <td>Nama Peminjam</td>
                         <td>Kode Barang</td>
+                        <td>Nama Penanggung Jawab</td>
                         <td>Stok</td>
                         <td>Opsi</td>
                     </tr>
@@ -147,6 +148,7 @@ if (isset($_GET['id_peminjaman'])) {
             $sql = "SELECT 
             pb.id_peminjaman AS id_peminjaman,
             u.username AS nama_peminjam,
+            b.penanggung_jawab AS nama_penanggung_jawab,
             pb.nama_barang,
             pb.tanggal_peminjaman,
             pb.jumlah,
@@ -178,6 +180,9 @@ if (isset($_GET['id_peminjaman'])) {
                             </td>
                             <td>
                                 <?php echo $item["tanggal_peminjaman"]; ?>
+                            </td>
+                            <td>
+                                <?php echo $item["nama_penanggung_jawab"]; ?>
                             </td>
                             <td>
                                 <?php echo $item["jumlah"]; ?>
