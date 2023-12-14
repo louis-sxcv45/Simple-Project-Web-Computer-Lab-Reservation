@@ -19,6 +19,8 @@ Key Features:
   4. Manage inventory: Add, edit, or remove items.
   5. Approve, reject, or modify item reservation requests.
   6. View and manage all reservation requests.
+ 
+  
 Technologies Used: Frontend: HTML, CSS, JavaScript
 Backend: PHP
 Database: MySQL
