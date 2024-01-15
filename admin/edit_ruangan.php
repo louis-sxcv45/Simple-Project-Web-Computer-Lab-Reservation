@@ -47,7 +47,7 @@ session_start();
 
                 <div class="text logo-text">
                 <span class="name">JOJO</span>
-                    <span class="profession">University</span>
+                    <span class="profession">University </span>
                 </div>
             </div>
 
