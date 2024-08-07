@@ -27,3 +27,40 @@ Database: MySQL
 
 Contributing: 
 Contributions are welcome! If you have ideas for improvements, bug fixes, or new features, feel free to create a pull request.
+
+
+THIS PREVIEW FOR THE WEBSITE:
+
+**- Login View**
+
+![image](https://github.com/user-attachments/assets/0f3935eb-4237-4879-8719-262960792f5e)
+
+
+**- Register View**
+
+  ![image](https://github.com/user-attachments/assets/ffff940f-adf4-446b-9058-2e947c46b6a5)
+  
+
+**- User Dashboard View**
+
+  ![image](https://github.com/user-attachments/assets/b87459a3-0b2e-4b8d-b83b-ae020241f585)
+  
+
+**- Room List View**
+
+![image](https://github.com/user-attachments/assets/fcb91314-398e-4b3d-a805-37193a698eb4)
+
+
+**- User Reservation History View**
+
+![image](https://github.com/user-attachments/assets/2daa9f82-893b-49ca-8eee-5ff26c5be708)
+
+
+**- Admin Dashboard view**
+
+![image](https://github.com/user-attachments/assets/234800e1-e613-442c-a40d-35694574bd91)
+
+
+**- Room Data view**
+
+![image](https://github.com/user-attachments/assets/3a49d403-f3a3-423e-a02b-da1785908f72)
