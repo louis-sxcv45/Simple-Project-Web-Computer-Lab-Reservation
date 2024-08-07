@@ -29,7 +29,10 @@ Contributing:
 Contributions are welcome! If you have ideas for improvements, bug fixes, or new features, feel free to create a pull request.
 
 
-THIS PREVIEW FOR THE WEBSITE:
+
+**============================ THIS PREVIEW FOR THE WEBSITE: ============================**
+
+
 
 **- Login View**
 
