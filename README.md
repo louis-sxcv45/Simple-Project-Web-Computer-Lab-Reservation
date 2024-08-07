@@ -30,7 +30,7 @@ Contributions are welcome! If you have ideas for improvements, bug fixes, or new
 
 
 
-**============================ THIS PREVIEW FOR THE WEBSITE: ============================**
+**==================== THIS PREVIEW FOR THE WEBSITE: ====================**
 
 
 
